@@ -1,3 +1,5 @@
+import 'package:crypto_prices/presentation/common/widgets/app_bar.dart';
+import 'package:crypto_prices/presentation/common/widgets/app_scaffold.dart';
 import 'package:crypto_prices/presentation/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +21,12 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Home");
+    return AppScaffold(
+      appBar: AppBarBuilder.buildAppBar(
+        'Home',
+        context,
+      ),
+      body: Text('Home'),
+    );
   }
 }

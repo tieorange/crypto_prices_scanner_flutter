@@ -1,5 +1,6 @@
 import 'package:crypto_prices/l10n/l10n.dart';
 import 'package:crypto_prices/presentation/login/cubit/login_cubit.dart';
+import 'package:crypto_prices/presentation/navigation/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -56,7 +57,7 @@ class SignInView extends StatelessWidget {
     );
 
     final loginButton = OutlinedButton.icon(
-      onPressed: onTapLogin,
+      onPressed: () => onTapLogin(context),
       icon: const Icon(Icons.login, size: 18),
       label: const Padding(
         padding: EdgeInsets.all(16),
@@ -79,7 +80,12 @@ class SignInView extends StatelessWidget {
     );
   }
 
-  void onTapLogin() {
+  void onTapLogin(BuildContext context) {
+    AppRouter.navigate(
+      context: context,
+      route: AppRoute.home,
+      type: RouteType.push,
+    );
     // Respond to button press
   }
 }
