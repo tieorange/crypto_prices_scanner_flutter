@@ -1,11 +1,10 @@
 import 'package:crypto_prices/presentation/common/widgets/app_bar.dart';
 import 'package:crypto_prices/presentation/common/widgets/app_scaffold.dart';
+import 'package:crypto_prices/presentation/crypto_currencies_list/view/crypto_list_page.dart';
 import 'package:crypto_prices/presentation/home/cubit/home_cubit.dart';
 import 'package:crypto_prices/presentation/login/view/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../crypto_currencies_list/view/crypto_list_page.dart';
 
 enum HomeTab { cryptoList, profile }
 
@@ -16,13 +15,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<HomeCubit>(
       create: (_) => HomeCubit(),
-      child: HomeView(),
+      child: const HomeView(),
     );
   }
 }
 
 class HomeView extends StatefulWidget {
-  HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -33,7 +32,9 @@ class _HomeViewState extends State<HomeView> {
 
   final tabPages = {
     HomeTab.cryptoList: const CryptoListPage(),
-    HomeTab.profile: const SignInSignUpView(),
+    HomeTab.profile: const Center(
+      child: Text('USER PROFILE WILL BE HERE'),
+    ),
   };
 
   final bottomNavItems = [
@@ -55,8 +56,14 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return AppScaffold(
-      appBar: AppBarBuilder.buildAppBar('Home', context),
+      appBar: AppBarBuilder.buildAppBar(
+        'Home',
+        context,
+        customTitle: HeroAppTitle(theme: theme),
+      ),
       body: PageView(
         onPageChanged: _onPageChanged,
         controller: _pageController,

@@ -23,6 +23,7 @@ class CryptoListView extends StatelessWidget {
       100,
       (int index) => const ListTile(
         title: Text('Bitcoin 1000k'),
+        subtitle: Divider(),
       ),
     );
     return ListView(children: list);

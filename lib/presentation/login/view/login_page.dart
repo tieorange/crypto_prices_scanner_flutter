@@ -70,7 +70,7 @@ class SignInView extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Crypto scanner', style: theme.textTheme.headline4),
+        HeroAppTitle(theme: theme),
         login,
         password,
         const SizedBox(height: 16),
@@ -83,8 +83,28 @@ class SignInView extends StatelessWidget {
     AppRouter.navigate(
       context: context,
       route: AppRoute.home,
-      type: RouteType.push,
+      type: RouteType.pushAndCleanStack,
     );
     // Respond to button press
+  }
+}
+
+class HeroAppTitle extends StatelessWidget {
+  const HeroAppTitle({
+    Key? key,
+    required this.theme,
+  }) : super(key: key);
+
+  final ThemeData theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Hero(
+      tag: 'AppBarTitle',
+      child: Text(
+        'Crypto scanner',
+        style: theme.textTheme.headline5?.copyWith(color: Colors.black54),
+      ),
+    );
   }
 }
