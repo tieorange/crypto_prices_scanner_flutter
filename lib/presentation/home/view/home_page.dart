@@ -29,7 +29,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  var _selectedIndex = 0;
+  HomeTab _currentTabIndex = HomeTab.cryptoList;
 
   final tabPages = {
     HomeTab.cryptoList: const CryptoListPage(),
@@ -49,27 +49,55 @@ class _HomeViewState extends State<HomeView> {
     )
   ];
 
+  late final _pageController = PageController(
+    initialPage: getPageIndexForTab(_currentTabIndex),
+  );
+
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      appBar: AppBarBuilder.buildAppBar(
-        'Home',
-        context,
+      appBar: AppBarBuilder.buildAppBar('Home', context),
+      body: PageView(
+        onPageChanged: _onPageChanged,
+        controller: _pageController,
+        children: tabPages.values.toList(),
       ),
-      body: const Text('Home'),
       bottomNavBar: BottomNavigationBar(
         items: bottomNavItems,
         type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedIndex,
+        currentIndex: getPageIndexForTab(_currentTabIndex),
         selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
     );
   }
 
-  void _onItemTapped(int value) {
+  void _onItemTapped(int index) {
+    _pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  void _onPageChanged(int page) {
+    final tab = getTabForPageIndex(page);
     setState(() {
-      _selectedIndex = value;
+      _currentTabIndex = tab;
     });
+  }
+
+  int getPageIndexForTab(HomeTab tab) {
+    return tabPages.keys.toList().indexOf(tab);
+  }
+
+  HomeTab getTabForPageIndex(int page) {
+    return tabPages.keys.elementAt(page);
+  }
+
+  @override
+  Future<void> dispose() async {
+    _pageController.dispose();
+    super.dispose();
   }
 }
