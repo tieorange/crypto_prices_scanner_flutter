@@ -71,9 +71,10 @@ class _HomeViewState extends State<HomeView> {
       ),
       bottomNavBar: BottomNavigationBar(
         items: bottomNavItems,
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
         currentIndex: getPageIndexForTab(_currentTabIndex),
         selectedItemColor: Colors.amber[800],
+        unselectedItemColor: Colors.grey[800],
         onTap: _onItemTapped,
       ),
     );

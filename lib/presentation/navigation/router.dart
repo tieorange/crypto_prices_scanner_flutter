@@ -54,7 +54,16 @@ abstract class AppRouter {
       case RouteType.pushAndCleanStack:
         // TODO: replace with Navigator.replace();
         // Navigator.pop(context);
-        Navigator.pushNamed(context, routeId, arguments: arguments);
+
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute<HomePage>(
+            builder: (BuildContext context) => const HomePage(),
+          ),
+          ModalRoute.withName('/'),
+        );
+
+        // Navigator.pushNamed(context, routeId, arguments: arguments);
         break;
     }
   }
