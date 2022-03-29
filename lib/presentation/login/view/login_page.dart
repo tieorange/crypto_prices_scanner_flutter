@@ -26,7 +26,7 @@ class SignInSignUpView extends StatelessWidget {
       body: const Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16),
             child: SignInView(),
           ),
         ),
@@ -46,6 +46,7 @@ class SignInView extends StatelessWidget {
         labelText: 'E-mail',
       ),
     );
+
     final password = TextFormField(
       obscureText: true,
       decoration: const InputDecoration(
@@ -54,8 +55,6 @@ class SignInView extends StatelessWidget {
       ),
     );
 
-    final theme = Theme.of(context);
-    final count = context.select((LoginCubit cubit) => cubit.state);
     final loginButton = OutlinedButton.icon(
       onPressed: onTapLogin,
       icon: const Icon(Icons.login, size: 18),
@@ -64,6 +63,10 @@ class SignInView extends StatelessWidget {
         child: Text('Login'),
       ),
     );
+
+    // final count = context.select((LoginCubit cubit) => cubit.state);
+    final theme = Theme.of(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -77,6 +80,6 @@ class SignInView extends StatelessWidget {
   }
 
   void onTapLogin() {
-      // Respond to button press
-    }
+    // Respond to button press
+  }
 }

@@ -1,5 +1,5 @@
 import 'package:crypto_prices/l10n/l10n.dart';
-import 'package:crypto_prices/presentation/login/view/login_page.dart';
+import 'package:crypto_prices/presentation/navigation/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -19,8 +19,10 @@ class App extends StatelessWidget {
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
+      initialRoute: AppRouter.initRoute(),
+      onGenerateRoute: AppRouter.generateRoute(),
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const LoginPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
