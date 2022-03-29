@@ -22,9 +22,8 @@ class SignInSignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.loginAppBarTitle)),
-      body: const Center(
+    return const Scaffold(
+      body: Center(
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(16),
