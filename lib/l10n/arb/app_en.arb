@@ -1,7 +1,0 @@
-{
-    "@@locale": "en",
-    "loginAppBarTitle": "Login",
-    "@loginAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
-}

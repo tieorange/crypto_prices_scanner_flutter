@@ -1,5 +1,5 @@
-import 'package:crypto_prices/l10n/l10n.dart';
-import 'package:crypto_prices/login/cubit/login_cubit.dart';
+import 'package:crypto_prices/presentation/l10n/l10n.dart';
+import 'package:crypto_prices/presentation/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
