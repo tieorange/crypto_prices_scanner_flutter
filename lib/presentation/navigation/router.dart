@@ -1,3 +1,5 @@
+// ignore_for_file: flutter_style_todos
+
 import 'package:crypto_prices/presentation/home/view/home_page.dart';
 import 'package:crypto_prices/presentation/login/view/login_page.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:flutter/material.dart';
 enum RouteType {
   push,
   pop,
+  pushAndCleanStack,
 }
 
 enum AppRoute {
@@ -47,6 +50,20 @@ abstract class AppRouter {
         break;
       case RouteType.pop:
         Navigator.popUntil(context, ModalRoute.withName(routeId));
+        break;
+      case RouteType.pushAndCleanStack:
+        // TODO: replace with Navigator.replace();
+        // Navigator.pop(context);
+
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute<HomePage>(
+            builder: (BuildContext context) => const HomePage(),
+          ),
+          ModalRoute.withName('/'),
+        );
+
+        // Navigator.pushNamed(context, routeId, arguments: arguments);
         break;
     }
   }
