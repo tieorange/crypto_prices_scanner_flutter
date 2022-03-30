@@ -29,8 +29,7 @@ CurrencyQuotaDto _$CurrencyQuotaDtoFromJson(Map<String, dynamic> json) =>
       rankDelta: json['rank_delta'] as String,
       high: json['high'] as String,
       highTimestamp: json['high_timestamp'] as String,
-      priceChangesPerYear:
-          PriceChangesPerYear.fromJson(json['ytd'] as Map<String, dynamic>),
+      ytd: Ytd.fromJson(json['ytd'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CurrencyQuotaDtoToJson(CurrencyQuotaDto instance) =>
@@ -56,19 +55,16 @@ Map<String, dynamic> _$CurrencyQuotaDtoToJson(CurrencyQuotaDto instance) =>
       'rank_delta': instance.rankDelta,
       'high': instance.high,
       'high_timestamp': instance.highTimestamp,
-      'ytd': instance.priceChangesPerYear,
+      'ytd': instance.ytd,
     };
 
-PriceChangesPerYear _$PriceChangesPerYearFromJson(Map<String, dynamic> json) =>
-    PriceChangesPerYear(
+Ytd _$YtdFromJson(Map<String, dynamic> json) => Ytd(
       volume: json['volume'] as String,
       priceChange: json['price_change'] as String,
       priceChangePct: json['price_change_pct'] as String,
     );
 
-Map<String, dynamic> _$PriceChangesPerYearToJson(
-        PriceChangesPerYear instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$YtdToJson(Ytd instance) => <String, dynamic>{
       'volume': instance.volume,
       'price_change': instance.priceChange,
       'price_change_pct': instance.priceChangePct,

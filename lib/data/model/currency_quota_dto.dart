@@ -4,31 +4,6 @@ part 'currency_quota_dto.g.dart';
 
 @JsonSerializable(ignoreUnannotated: false)
 class CurrencyQuotaDto {
-  CurrencyQuotaDto({
-    required this.id,
-    required this.currency,
-    required this.symbol,
-    required this.name,
-    required this.logoUrl,
-    required this.status,
-    required this.price,
-    required this.priceDate,
-    required this.priceTimestamp,
-    required this.marketCap,
-    required this.marketCapDominance,
-    required this.numExchanges,
-    required this.numPairs,
-    required this.numPairsUnmapped,
-    required this.firstCandle,
-    required this.firstTrade,
-    required this.firstOrderBook,
-    required this.rank,
-    required this.rankDelta,
-    required this.high,
-    required this.highTimestamp,
-    required this.priceChangesPerYear,
-  });
-
   @JsonKey(name: 'id')
   String id;
   @JsonKey(name: 'currency')
@@ -72,7 +47,32 @@ class CurrencyQuotaDto {
   @JsonKey(name: 'high_timestamp')
   String highTimestamp;
   @JsonKey(name: 'ytd')
-  PriceChangesPerYear priceChangesPerYear;
+  Ytd ytd;
+
+  CurrencyQuotaDto({
+    required this.id,
+    required this.currency,
+    required this.symbol,
+    required this.name,
+    required this.logoUrl,
+    required this.status,
+    required this.price,
+    required this.priceDate,
+    required this.priceTimestamp,
+    required this.marketCap,
+    required this.marketCapDominance,
+    required this.numExchanges,
+    required this.numPairs,
+    required this.numPairsUnmapped,
+    required this.firstCandle,
+    required this.firstTrade,
+    required this.firstOrderBook,
+    required this.rank,
+    required this.rankDelta,
+    required this.high,
+    required this.highTimestamp,
+    required this.ytd,
+  });
 
   factory CurrencyQuotaDto.fromJson(Map<String, dynamic> json) =>
       _$CurrencyQuotaDtoFromJson(json);
@@ -86,14 +86,9 @@ class CurrencyQuotaDto {
   }
 }
 
+// Price changes DTO
 @JsonSerializable(ignoreUnannotated: false)
-class PriceChangesPerYear {
-  PriceChangesPerYear({
-    required this.volume,
-    required this.priceChange,
-    required this.priceChangePct,
-  });
-
+class Ytd {
   @JsonKey(name: 'volume')
   String volume;
   @JsonKey(name: 'price_change')
@@ -101,8 +96,13 @@ class PriceChangesPerYear {
   @JsonKey(name: 'price_change_pct')
   String priceChangePct;
 
-  factory PriceChangesPerYear.fromJson(Map<String, dynamic> json) =>
-      _$YtdFromJson(json);
+  Ytd({
+    required this.volume,
+    required this.priceChange,
+    required this.priceChangePct,
+  });
+
+  factory Ytd.fromJson(Map<String, dynamic> json) => _$YtdFromJson(json);
 
   Map<String, dynamic> toJson() => _$YtdToJson(this);
 }
