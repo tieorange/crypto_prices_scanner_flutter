@@ -15,14 +15,18 @@ dependencies:
   # State:
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
+  freezed: ^1.1.0
+  freezed_annotation: ^1.1.0
 
   # Network:
   dio:
   retrofit:
+  pretty_dio_logger: ^1.1.1
 
   # Tools:
   logger: ^1.1.0
   intl: ^0.17.0
+  dart_extensions: ^2.2.0
 
   # UI:
   flutter_svg: ^1.0.3
