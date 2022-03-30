@@ -1,26 +1,45 @@
 name: crypto_prices
 description: Crypto prices
-version: 1.0.0+1
+version: 0.1.0+1
 publish_to: none
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
-  bloc: ^8.0.3
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
+
+  # State:
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+
+  # Network:
+  dio:
+  retrofit:
+
+  # Tools:
+  logger: ^1.1.0
   intl: ^0.17.0
+
+  # UI:
+  flutter_svg: ^1.0.3
+  cached_network_image:
+  font_awesome_flutter: ^10.1.0
 
 dev_dependencies:
   bloc_test: ^9.0.3
-  flutter_test:
-    sdk: flutter
   mocktail: ^0.3.0
   very_good_analysis: ^2.4.0
+
+  retrofit_generator:
+  build_runner: ^2.0.1
+  json_serializable: ^6.1.5
+
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true
