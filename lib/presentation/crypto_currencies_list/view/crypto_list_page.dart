@@ -1,15 +1,10 @@
-import 'package:crypto_prices/data/service/currency_quota_rest_service.dart';
-import 'package:crypto_prices/domain/core/errors/failures.dart';
 import 'package:crypto_prices/domain/dependency_injection/di.dart';
 import 'package:crypto_prices/domain/service/currency_quota_service.dart';
-import 'package:crypto_prices/presentation/crypto_currencies_list/cubit/crypto_list_cubit.dart';
 import 'package:crypto_prices/presentation/crypto_currencies_list/cubit/crypto_list_cubit.dart';
 import 'package:crypto_prices/presentation/template_for_new_pages/cubit/template_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/crypto_list_cubit.dart';
-import '../cubit/crypto_list_cubit.dart';
 
 
 class CryptoListPage extends StatelessWidget {
@@ -17,8 +12,8 @@ class CryptoListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<TemplateCubit>(
-      create: (_) => CryptoListCubit(),
+    return BlocProvider<CryptoListCubit>(
+      create: (_) => CryptoListCubit(get<CurrencyQuotaService>()),
       child: const CryptoListView(),
     );
   }

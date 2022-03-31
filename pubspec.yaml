@@ -24,6 +24,7 @@ dependencies:
   pretty_dio_logger: ^1.1.1
 
   # Tools:
+  get_it: ^7.2.0
   logger: ^1.1.0
   intl: ^0.17.0
   dart_extensions: ^2.2.0

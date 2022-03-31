@@ -8,7 +8,9 @@ part 'crypto_list_cubit.freezed.dart';
 
 class CryptoListCubit extends Cubit<CryptoListState> {
   CryptoListCubit(this.currencyQuotaService)
-      : super(const CryptoListState.loading());
+      : super(const CryptoListState.loading()){
+    loadAndEmitCryptoList();
+  }
 
   final CurrencyQuotaService currencyQuotaService;
 
