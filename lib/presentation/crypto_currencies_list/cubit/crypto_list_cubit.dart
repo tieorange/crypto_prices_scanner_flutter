@@ -8,7 +8,7 @@ part 'crypto_list_cubit.freezed.dart';
 
 class CryptoListCubit extends Cubit<CryptoListState> {
   CryptoListCubit(this.currencyQuotaService)
-      : super(const CryptoListState.loading()){
+      : super(const CryptoListState.loading()) {
     loadAndEmitCryptoList();
   }
 
@@ -17,16 +17,18 @@ class CryptoListCubit extends Cubit<CryptoListState> {
   Future<void> loadAndEmitCryptoList() async {
     emit(const CryptoListState.loading());
 
-    const apiKey = '';
-    const currenciesIds = '';
-    const priceInterval = 'ytd';
-    const currencyConvertTo = 'USD';
+    // TODO: SECURITY: Move to gradle.properties file and stop tracking
+    const _apiKey = 'd5dd8edb26dc5f55601c691bfa0902e4e08384ad';
+    const _currenciesIds = '';
+
+    const _priceInterval = 'ytd';
+    const _currencyConvertTo = 'USD';
 
     final response = await currencyQuotaService.getCurrenciesTicker(
-      apiKey,
-      currenciesIds,
-      priceInterval,
-      currencyConvertTo,
+      _apiKey,
+      _currenciesIds,
+      _priceInterval,
+      _currencyConvertTo,
     );
 
     emit(CryptoListState.loaded(response));
