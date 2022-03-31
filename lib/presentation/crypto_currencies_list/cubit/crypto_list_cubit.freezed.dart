@@ -17,18 +17,18 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CryptoListStateTearOff {
   const _$CryptoListStateTearOff();
 
-  _Loading loading() {
-    return const _Loading();
+  LoadingCryptoList loading() {
+    return const LoadingCryptoList();
   }
 
-  _Loaded loaded(List<CurrencyQuota> cryptoList) {
-    return _Loaded(
+  LoadedCryptoList loaded(List<CurrencyQuota> cryptoList) {
+    return LoadedCryptoList(
       cryptoList,
     );
   }
 
-  _Error error(Failure failure) {
-    return _Error(
+  ErrorCryptoList error(Failure failure) {
+    return ErrorCryptoList(
       failure,
     );
   }
@@ -63,23 +63,23 @@ mixin _$CryptoListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LoadingCryptoList value) loading,
+    required TResult Function(LoadedCryptoList value) loaded,
+    required TResult Function(ErrorCryptoList value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -103,25 +103,28 @@ class _$CryptoListStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class $LoadingCryptoListCopyWith<$Res> {
+  factory $LoadingCryptoListCopyWith(
+          LoadingCryptoList value, $Res Function(LoadingCryptoList) then) =
+      _$LoadingCryptoListCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$CryptoListStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class _$LoadingCryptoListCopyWithImpl<$Res>
+    extends _$CryptoListStateCopyWithImpl<$Res>
+    implements $LoadingCryptoListCopyWith<$Res> {
+  _$LoadingCryptoListCopyWithImpl(
+      LoadingCryptoList _value, $Res Function(LoadingCryptoList) _then)
+      : super(_value, (v) => _then(v as LoadingCryptoList));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  LoadingCryptoList get _value => super._value as LoadingCryptoList;
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$LoadingCryptoList implements LoadingCryptoList {
+  const _$LoadingCryptoList();
 
   @override
   String toString() {
@@ -131,7 +134,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading);
+        (other.runtimeType == runtimeType && other is LoadingCryptoList);
   }
 
   @override
@@ -174,9 +177,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LoadingCryptoList value) loading,
+    required TResult Function(LoadedCryptoList value) loaded,
+    required TResult Function(ErrorCryptoList value) error,
   }) {
     return loading(this);
   }
@@ -184,9 +187,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
   }) {
     return loading?.call(this);
   }
@@ -194,9 +197,9 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -206,31 +209,34 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements CryptoListState {
-  const factory _Loading() = _$_Loading;
+abstract class LoadingCryptoList implements CryptoListState {
+  const factory LoadingCryptoList() = _$LoadingCryptoList;
 }
 
 /// @nodoc
-abstract class _$LoadedCopyWith<$Res> {
-  factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
-      __$LoadedCopyWithImpl<$Res>;
+abstract class $LoadedCryptoListCopyWith<$Res> {
+  factory $LoadedCryptoListCopyWith(
+          LoadedCryptoList value, $Res Function(LoadedCryptoList) then) =
+      _$LoadedCryptoListCopyWithImpl<$Res>;
   $Res call({List<CurrencyQuota> cryptoList});
 }
 
 /// @nodoc
-class __$LoadedCopyWithImpl<$Res> extends _$CryptoListStateCopyWithImpl<$Res>
-    implements _$LoadedCopyWith<$Res> {
-  __$LoadedCopyWithImpl(_Loaded _value, $Res Function(_Loaded) _then)
-      : super(_value, (v) => _then(v as _Loaded));
+class _$LoadedCryptoListCopyWithImpl<$Res>
+    extends _$CryptoListStateCopyWithImpl<$Res>
+    implements $LoadedCryptoListCopyWith<$Res> {
+  _$LoadedCryptoListCopyWithImpl(
+      LoadedCryptoList _value, $Res Function(LoadedCryptoList) _then)
+      : super(_value, (v) => _then(v as LoadedCryptoList));
 
   @override
-  _Loaded get _value => super._value as _Loaded;
+  LoadedCryptoList get _value => super._value as LoadedCryptoList;
 
   @override
   $Res call({
     Object? cryptoList = freezed,
   }) {
-    return _then(_Loaded(
+    return _then(LoadedCryptoList(
       cryptoList == freezed
           ? _value.cryptoList
           : cryptoList // ignore: cast_nullable_to_non_nullable
@@ -241,8 +247,8 @@ class __$LoadedCopyWithImpl<$Res> extends _$CryptoListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded implements _Loaded {
-  const _$_Loaded(this.cryptoList);
+class _$LoadedCryptoList implements LoadedCryptoList {
+  const _$LoadedCryptoList(this.cryptoList);
 
   @override
   final List<CurrencyQuota> cryptoList;
@@ -256,7 +262,7 @@ class _$_Loaded implements _Loaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Loaded &&
+            other is LoadedCryptoList &&
             const DeepCollectionEquality()
                 .equals(other.cryptoList, cryptoList));
   }
@@ -267,8 +273,8 @@ class _$_Loaded implements _Loaded {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadedCopyWith<_Loaded> get copyWith =>
-      __$LoadedCopyWithImpl<_Loaded>(this, _$identity);
+  $LoadedCryptoListCopyWith<LoadedCryptoList> get copyWith =>
+      _$LoadedCryptoListCopyWithImpl<LoadedCryptoList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -307,9 +313,9 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LoadingCryptoList value) loading,
+    required TResult Function(LoadedCryptoList value) loaded,
+    required TResult Function(ErrorCryptoList value) error,
   }) {
     return loaded(this);
   }
@@ -317,9 +323,9 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -327,9 +333,9 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -339,35 +345,40 @@ class _$_Loaded implements _Loaded {
   }
 }
 
-abstract class _Loaded implements CryptoListState {
-  const factory _Loaded(List<CurrencyQuota> cryptoList) = _$_Loaded;
+abstract class LoadedCryptoList implements CryptoListState {
+  const factory LoadedCryptoList(List<CurrencyQuota> cryptoList) =
+      _$LoadedCryptoList;
 
   List<CurrencyQuota> get cryptoList;
   @JsonKey(ignore: true)
-  _$LoadedCopyWith<_Loaded> get copyWith => throw _privateConstructorUsedError;
+  $LoadedCryptoListCopyWith<LoadedCryptoList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class $ErrorCryptoListCopyWith<$Res> {
+  factory $ErrorCryptoListCopyWith(
+          ErrorCryptoList value, $Res Function(ErrorCryptoList) then) =
+      _$ErrorCryptoListCopyWithImpl<$Res>;
   $Res call({Failure failure});
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$CryptoListStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class _$ErrorCryptoListCopyWithImpl<$Res>
+    extends _$CryptoListStateCopyWithImpl<$Res>
+    implements $ErrorCryptoListCopyWith<$Res> {
+  _$ErrorCryptoListCopyWithImpl(
+      ErrorCryptoList _value, $Res Function(ErrorCryptoList) _then)
+      : super(_value, (v) => _then(v as ErrorCryptoList));
 
   @override
-  _Error get _value => super._value as _Error;
+  ErrorCryptoList get _value => super._value as ErrorCryptoList;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_Error(
+    return _then(ErrorCryptoList(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -378,8 +389,8 @@ class __$ErrorCopyWithImpl<$Res> extends _$CryptoListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error(this.failure);
+class _$ErrorCryptoList implements ErrorCryptoList {
+  const _$ErrorCryptoList(this.failure);
 
   @override
   final Failure failure;
@@ -393,7 +404,7 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Error &&
+            other is ErrorCryptoList &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -403,8 +414,8 @@ class _$_Error implements _Error {
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  $ErrorCryptoListCopyWith<ErrorCryptoList> get copyWith =>
+      _$ErrorCryptoListCopyWithImpl<ErrorCryptoList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -443,9 +454,9 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
+    required TResult Function(LoadingCryptoList value) loading,
+    required TResult Function(LoadedCryptoList value) loaded,
+    required TResult Function(ErrorCryptoList value) error,
   }) {
     return error(this);
   }
@@ -453,9 +464,9 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
   }) {
     return error?.call(this);
   }
@@ -463,9 +474,9 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult Function(LoadingCryptoList value)? loading,
+    TResult Function(LoadedCryptoList value)? loaded,
+    TResult Function(ErrorCryptoList value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -475,10 +486,11 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements CryptoListState {
-  const factory _Error(Failure failure) = _$_Error;
+abstract class ErrorCryptoList implements CryptoListState {
+  const factory ErrorCryptoList(Failure failure) = _$ErrorCryptoList;
 
   Failure get failure;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  $ErrorCryptoListCopyWith<ErrorCryptoList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
