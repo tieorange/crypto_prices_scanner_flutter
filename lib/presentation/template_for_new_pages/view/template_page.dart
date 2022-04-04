@@ -1,6 +1,5 @@
 import 'package:crypto_prices/presentation/common/widgets/app_bar.dart';
 import 'package:crypto_prices/presentation/common/widgets/app_scaffold.dart';
-import 'package:crypto_prices/presentation/home/cubit/home_cubit.dart';
 import 'package:crypto_prices/presentation/template_for_new_pages/cubit/template_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -46,6 +46,7 @@ mixin _$CryptoListState {
     required TResult Function(Failure failure) error,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
@@ -53,6 +54,7 @@ mixin _$CryptoListState {
     TResult Function(Failure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
@@ -61,6 +63,7 @@ mixin _$CryptoListState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadingCryptoList value) loading,
@@ -68,6 +71,7 @@ mixin _$CryptoListState {
     required TResult Function(ErrorCryptoList value) error,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadingCryptoList value)? loading,
@@ -75,6 +79,7 @@ mixin _$CryptoListState {
     TResult Function(ErrorCryptoList value)? error,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadingCryptoList value)? loading,
@@ -98,6 +103,7 @@ class _$CryptoListStateCopyWithImpl<$Res>
   _$CryptoListStateCopyWithImpl(this._value, this._then);
 
   final CryptoListState _value;
+
   // ignore: unused_field
   final $Res Function(CryptoListState) _then;
 }
@@ -218,6 +224,7 @@ abstract class $LoadedCryptoListCopyWith<$Res> {
   factory $LoadedCryptoListCopyWith(
           LoadedCryptoList value, $Res Function(LoadedCryptoList) then) =
       _$LoadedCryptoListCopyWithImpl<$Res>;
+
   $Res call({List<CurrencyQuota> cryptoList});
 }
 
@@ -350,6 +357,7 @@ abstract class LoadedCryptoList implements CryptoListState {
       _$LoadedCryptoList;
 
   List<CurrencyQuota> get cryptoList;
+
   @JsonKey(ignore: true)
   $LoadedCryptoListCopyWith<LoadedCryptoList> get copyWith =>
       throw _privateConstructorUsedError;
@@ -360,6 +368,7 @@ abstract class $ErrorCryptoListCopyWith<$Res> {
   factory $ErrorCryptoListCopyWith(
           ErrorCryptoList value, $Res Function(ErrorCryptoList) then) =
       _$ErrorCryptoListCopyWithImpl<$Res>;
+
   $Res call({Failure failure});
 }
 
@@ -490,6 +499,7 @@ abstract class ErrorCryptoList implements CryptoListState {
   const factory ErrorCryptoList(Failure failure) = _$ErrorCryptoList;
 
   Failure get failure;
+
   @JsonKey(ignore: true)
   $ErrorCryptoListCopyWith<ErrorCryptoList> get copyWith =>
       throw _privateConstructorUsedError;

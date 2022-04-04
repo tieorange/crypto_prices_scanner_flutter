@@ -1,11 +1,8 @@
 import 'package:crypto_prices/domain/dependency_injection/di.dart';
 import 'package:crypto_prices/domain/service/currency_quota_service.dart';
 import 'package:crypto_prices/presentation/crypto_currencies_list/cubit/crypto_list_cubit.dart';
-import 'package:crypto_prices/presentation/template_for_new_pages/cubit/template_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-
 
 class CryptoListPage extends StatelessWidget {
   const CryptoListPage({Key? key}) : super(key: key);
