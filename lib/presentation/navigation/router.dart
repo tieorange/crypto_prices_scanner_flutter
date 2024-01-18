@@ -2,6 +2,7 @@
 
 import 'package:crypto_prices/presentation/home/view/home_page.dart';
 import 'package:crypto_prices/presentation/login/view/login_page.dart';
+import 'package:crypto_prices/presentation/login/view/new_login_page.dart';
 import 'package:flutter/material.dart';
 
 enum RouteType {
@@ -33,6 +34,9 @@ abstract class AppRouter {
         ),
     AppRoute.home.getRouteName(): (settings) => MaterialPageRoute<HomePage>(
           builder: (context) => const HomePage(),
+        ),
+    AppRoute.login.getRouteName(): (settings) => MaterialPageRoute<LoginPage>(
+          builder: (context) => const LoginPage(),
         ),
   };
 

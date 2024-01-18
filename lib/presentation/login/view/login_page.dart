@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<LoginCubit>(
       create: (_) => LoginCubit(),
-      child: const SignInSignUpView(),
+      child: const NewLoginPage(),
     );
   }
 }
