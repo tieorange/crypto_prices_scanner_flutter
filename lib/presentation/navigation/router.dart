@@ -15,7 +15,6 @@ enum AppRoute {
   splashScreen,
   login,
   home,
-  signIn,
 }
 
 extension AppRouteExtension on AppRoute {
@@ -36,8 +35,8 @@ abstract class AppRouter {
     AppRoute.home.getRouteName(): (settings) => MaterialPageRoute<HomePage>(
           builder: (context) => const HomePage(),
         ),
-    AppRoute.signIn.getRouteName(): (settings) => MaterialPageRoute<NewLoginPage>(
-          builder: (context) => const NewLoginPage(),
+    AppRoute.login.getRouteName(): (settings) => MaterialPageRoute<LoginPage>(
+          builder: (context) => const LoginPage(),
         ),
   };
 
