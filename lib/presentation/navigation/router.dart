@@ -2,6 +2,7 @@
 
 import 'package:crypto_prices/presentation/home/view/home_page.dart';
 import 'package:crypto_prices/presentation/login/view/login_page.dart';
+import 'package:crypto_prices/presentation/login/view/new_login_page.dart';
 import 'package:flutter/material.dart';
 
 enum RouteType {
@@ -14,6 +15,7 @@ enum AppRoute {
   splashScreen,
   login,
   home,
+  newLogin,
 }
 
 extension AppRouteExtension on AppRoute {
@@ -33,6 +35,9 @@ abstract class AppRouter {
         ),
     AppRoute.home.getRouteName(): (settings) => MaterialPageRoute<HomePage>(
           builder: (context) => const HomePage(),
+        ),
+    AppRoute.newLogin.getRouteName(): (settings) => MaterialPageRoute<NewLoginPage>(
+          builder: (context) => const NewLoginPage(),
         ),
   };
 
