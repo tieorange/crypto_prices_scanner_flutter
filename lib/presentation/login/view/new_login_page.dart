@@ -6,6 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class NewLoginPage extends StatefulWidget {
   const NewLoginPage({Key? key}) : super(key: key);
 
+  static Route route() {
+    return MaterialPageRoute<void>(builder: (_) => BlocProvider<LoginCubit>(
+      create: (_) => LoginCubit(),
+      child: const NewLoginPage(),
+    ));
+  }
+
   @override
   _NewLoginPageState createState() => _NewLoginPageState();
 }
