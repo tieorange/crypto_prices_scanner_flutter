@@ -60,8 +60,9 @@ class _NewLoginPageState extends State<NewLoginPage> {
     final email = _emailController.text;
     final password = _passwordController.text;
     // Sweep: Create a LoginCubit and handle it
-    // Create an instance of the LoginCubit or get it from the context
-    final LoginCubit loginCubit = context.read<LoginCubit>();
+    // Create an instance of the LoginCubit connected to LoginRepository
+    final loginRepository = LoginRepository(); // Create LoginRepository instance
+    final loginCubit = LoginCubit(loginRepository); // Pass the repository to the cubit
     // Call the login method on the cubit with the provided email and password
     loginCubit.login(email, password);
     // Assuming the login method will handle the state and navigate upon success.
