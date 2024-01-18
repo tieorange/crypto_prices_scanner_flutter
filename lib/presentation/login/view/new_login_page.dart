@@ -6,13 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class NewLoginPage extends StatefulWidget {
   const NewLoginPage({Key? key}) : super(key: key);
 
-  static Route route() {
-    return MaterialPageRoute<void>(builder: (_) => BlocProvider<LoginCubit>(
-      create: (_) => LoginCubit(),
-      child: const NewLoginPage(),
-    ));
-  }
-
   @override
   _NewLoginPageState createState() => _NewLoginPageState();
 }
@@ -66,8 +59,11 @@ class _NewLoginPageState extends State<NewLoginPage> {
   void _onLoginPressed() {
     final email = _emailController.text;
     final password = _passwordController.text;
-    // Assuming LoginCubit has a login method that takes email and password.
-    context.read<LoginCubit>().login(email, password);
+    // Sweep: Create a LoginCubit and handle it
+    // Create an instance of the LoginCubit or get it from the context
+    final LoginCubit loginCubit = context.read<LoginCubit>();
+    // Call the login method on the cubit with the provided email and password
+    loginCubit.login(email, password);
     // Assuming the login method will handle the state and navigate upon success.
     _navigateToHome();
   }
